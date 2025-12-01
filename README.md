@@ -186,19 +186,21 @@ elif "your_domain" in query.lower():
 
 ## 🔄 Model Mappings
 
-Since some paper models aren't publicly available, we use equivalent HuggingFace models:
+**Important Note**: The original paper uses actual GPT-5, Claude Opus 4.1, and other proprietary models. Since these aren't publicly available, this implementation uses similar-capability HuggingFace models as substitutes.
 
-### Specialized Models
-- **qwen2.5-math-7b** → `Qwen/Qwen2.5-Math-7B-Instruct`
-- **qwen2.5-math-72b** → `Qwen/Qwen2.5-Math-7B-Instruct` (fallback)
-- **qwen2.5-coder-32b** → `Qwen/Qwen2.5-Coder-32B-Instruct`
+### Specialized Models (Available on HuggingFace)
+- **qwen2.5-math-7b** → `Qwen/Qwen2.5-Math-7B-Instruct` ✅
+- **qwen2.5-math-72b** → `Qwen/Qwen2.5-Math-7B-Instruct` (72B not available)
+- **qwen2.5-coder-32b** → `Qwen/Qwen2.5-Coder-32B-Instruct` ✅
 
-### Generalist Models
-- **gpt-5** → `meta-llama/Llama-2-13b-chat-hf` (fallback)
-- **gpt-5-mini** → `HuggingFaceH4/zephyr-7b-beta` (fallback)
-- **claude-opus-4.1** → `Qwen/Qwen2.5-14B-Instruct` (fallback)
-- **qwen3-32b** → `Qwen/Qwen2.5-32B-Instruct`
-- **qwen3-235b** → `Qwen/Qwen2.5-72B-Instruct` (fallback)
+### Generalist Models (HuggingFace Substitutes)
+- **gpt-5** (paper) → `meta-llama/Llama-2-13b-chat-hf` (substitute)
+- **gpt-5-mini** (paper) → `HuggingFaceH4/zephyr-7b-beta` (substitute)
+- **claude-opus-4.1** (paper) → `Qwen/Qwen2.5-14B-Instruct` (substitute)
+- **qwen3-32b** → `Qwen/Qwen2.5-32B-Instruct` (similar)
+- **qwen3-235b** → `Qwen/Qwen2.5-72B-Instruct` (235B not available)
+
+**Performance Note**: Results may differ from paper benchmarks due to model substitutions. The orchestration logic and cost-efficiency principles remain the same.
 
 ## 🎯 Key Features
 
