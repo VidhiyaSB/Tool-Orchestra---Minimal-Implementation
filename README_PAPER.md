@@ -44,7 +44,7 @@ This is the exact implementation of ToolOrchestra as described in the NVIDIA res
 
 1. **Install dependencies:**
 ```bash
-pip install -r requirements_paper.txt
+pip install -r requirements.txt
 ```
 
 2. **Set environment variables:**

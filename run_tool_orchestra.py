@@ -8,7 +8,6 @@ import json
 import time
 from typing import Dict, List
 from tool_orchestra import ToolOrchestra, Trajectory
-from reinforcement_learning import GroupRelativePolicyOptimization, ToolScaleDataSynthesis, PreferenceGenerator
 
 def run_hle_benchmark():
     """Run on Humanity's Last Exam style questions"""
