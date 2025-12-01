@@ -246,7 +246,7 @@ MIT License - see LICENSE file for details.
 
 ## 🔗 Links
 
-- **Paper**: [ToolOrchestra Research Paper](paper.txt)
+- **Paper**: [ToolOrchestra Research Paper](https://arxiv.org/abs/2511.21689)
 - **Repository**: [GitHub](https://github.com/VidhiyaSB/Tool-Orchestra---Minimal-Implementation)
 - **Issues**: [Report bugs or request features](https://github.com/VidhiyaSB/Tool-Orchestra---Minimal-Implementation/issues)
 
