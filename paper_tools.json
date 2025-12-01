@@ -1,0 +1,88 @@
+{
+  "tools": [
+    {
+      "name": "web_search",
+      "description": "Search the web using Tavily API for real-time information",
+      "type": "basic",
+      "cost": 0.01,
+      "latency": 2.0
+    },
+    {
+      "name": "local_search", 
+      "description": "Search local knowledge base using Faiss index with Qwen3-Embedding-8B",
+      "type": "basic",
+      "cost": 0.005,
+      "latency": 0.5
+    },
+    {
+      "name": "code_interpreter",
+      "description": "Execute Python code in a secure sandbox environment",
+      "type": "basic", 
+      "cost": 0.02,
+      "latency": 1.0
+    },
+    {
+      "name": "qwen2.5-math-7b",
+      "description": "Specialized 7B math model for mathematical reasoning and problem solving",
+      "type": "specialized_llm",
+      "cost": 0.1,
+      "latency": 3.0
+    },
+    {
+      "name": "qwen2.5-math-72b", 
+      "description": "Specialized 72B math model for complex mathematical reasoning",
+      "type": "specialized_llm",
+      "cost": 0.5,
+      "latency": 8.0
+    },
+    {
+      "name": "qwen2.5-coder-32b",
+      "description": "Specialized 32B coding model for programming tasks",
+      "type": "specialized_llm", 
+      "cost": 0.3,
+      "latency": 5.0
+    },
+    {
+      "name": "gpt-5",
+      "description": "GPT-5 generalist model for complex reasoning and query writing",
+      "type": "generalist_llm",
+      "cost": 2.0,
+      "latency": 10.0
+    },
+    {
+      "name": "gpt-5-mini",
+      "description": "GPT-5-mini lighter version for simpler generalist tasks", 
+      "type": "generalist_llm",
+      "cost": 0.5,
+      "latency": 4.0
+    },
+    {
+      "name": "claude-opus-4.1",
+      "description": "Claude Opus 4.1 for advanced reasoning and analysis",
+      "type": "generalist_llm",
+      "cost": 1.5,
+      "latency": 8.0
+    },
+    {
+      "name": "qwen3-32b",
+      "description": "Qwen3-32B generalist model with strong analytical capabilities",
+      "type": "generalist_llm", 
+      "cost": 0.4,
+      "latency": 6.0
+    },
+    {
+      "name": "qwen3-235b",
+      "description": "Qwen3-235B large generalist model for complex tasks",
+      "type": "generalist_llm",
+      "cost": 1.2,
+      "latency": 12.0
+    },
+    {
+      "name": "get_flight_status",
+      "description": "Domain-specific function to check flight status information",
+      "type": "domain_function",
+      "cost": 0.01,
+      "latency": 1.0
+    }
+  ]
+}
