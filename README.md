@@ -26,8 +26,10 @@ pip install -r requirements.txt
 # Required for web search
 export TAVILY_API_KEY=your_tavily_key
 
-# Optional - for premium models
+# Required for specialized models (math/coding)
 export HF_TOKEN=your_huggingface_token
+
+# Optional - for premium models (GPT-5, Claude)
 export CLIENT_ID=your_client_id
 export CLIENT_SECRET=your_client_secret
 ```
@@ -175,11 +177,28 @@ elif "your_domain" in query.lower():
 
 ### Required
 - **Tavily API** - Web search functionality
-- **HuggingFace Token** - Access to open-source models
+- **HuggingFace Token** - Access to specialized models (math/coding)
 
 ### Optional
-- **OpenAI API** - GPT models (if using premium routing)
-- **Anthropic API** - Claude models (if using premium routing)
+- **NVIDIA API** - GPT-5, Claude models (premium routing)
+- **OpenAI API** - Direct GPT access (alternative)
+- **Anthropic API** - Direct Claude access (alternative)
+
+## 🔄 Model Mappings
+
+Since some paper models aren't publicly available, we use equivalent HuggingFace models:
+
+### Specialized Models
+- **qwen2.5-math-7b** → `Qwen/Qwen2.5-Math-7B-Instruct`
+- **qwen2.5-math-72b** → `Qwen/Qwen2.5-Math-7B-Instruct` (fallback)
+- **qwen2.5-coder-32b** → `Qwen/Qwen2.5-Coder-32B-Instruct`
+
+### Generalist Models
+- **gpt-5** → `meta-llama/Llama-2-13b-chat-hf` (fallback)
+- **gpt-5-mini** → `HuggingFaceH4/zephyr-7b-beta` (fallback)
+- **claude-opus-4.1** → `Qwen/Qwen2.5-14B-Instruct` (fallback)
+- **qwen3-32b** → `Qwen/Qwen2.5-32B-Instruct`
+- **qwen3-235b** → `Qwen/Qwen2.5-72B-Instruct` (fallback)
 
 ## 🎯 Key Features
 
