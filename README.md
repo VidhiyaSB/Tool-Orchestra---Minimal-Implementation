@@ -1,17 +1,17 @@
-# 🎼 Tool Orchestra - Working Demo
 
-> **⚠️ DEMO: NVIDIA Orchestrator-8B + HuggingFace model execution**
+# 🎼 Tool Orchestra - Proof of Concept
 
-Demonstration of NVIDIA's ToolOrchestra paper. Uses actual NVIDIA Orchestrator-8B for intelligent routing + HuggingFace models for execution.
+> **⚡ PROOF OF CONCEPT: Intelligent AI Task Routing**
+
+Functional implementation inspired by NVIDIA's ToolOrchestra paper. Demonstrates preference-aware routing using NVIDIA Orchestrator-8B with HuggingFace models.
+
 
 ## 🎯 **What's Actually Working**
 
 ✅ **NVIDIA Orchestrator-8B** - Real AI routing decisions via Ollama  
 ✅ **Preference-Aware Routing** - Cost vs accuracy tradeoffs  
 ✅ **HuggingFace Model Execution** - Math, coding, creative tasks  
-✅ **Web Search** - Real Tavily API integration  
-✅ **Local Search** - Faiss with sentence-transformers  
-✅ **Code Execution** - Python sandbox with safety  
+✅ **Web Search** - Real Tavily API integration    
 ✅ **Cost Tracking** - Per-tool cost calculation  
 
 ## 🔄 **Paper Model → HuggingFace Equivalent**
