@@ -378,6 +378,35 @@ def get_llm_response(model,messages,temperature=1.0,return_raw_response=False,to
                 
         except Exception as e:
             return f"HuggingFace error: {str(e)}"
+    elif model_type == "ollama":
+        try:
+            import ollama
+            from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeoutError
+            
+            def call_ollama():
+                return ollama.chat(
+                    model=model,
+                    messages=messages,
+                    options={
+                        'temperature': temperature,
+                        'num_predict': min(max_length, 100),  # Limit output length
+                        'num_ctx': 2048,  # Limit context window
+                        'top_p': 0.9,
+                        'repeat_penalty': 1.1
+                    }
+                )
+            
+            # Use ThreadPoolExecutor for timeout on Windows
+            with ThreadPoolExecutor() as executor:
+                future = executor.submit(call_ollama)
+                try:
+                    response = future.result(timeout=180)  # 180 second timeout for first load
+                    return response['message']['content']
+                except FutureTimeoutError:
+                    return f"Ollama timeout: Model {model} took too long to respond (>60s)"
+                
+        except Exception as e:
+            return f"Ollama error: {str(e)}"
     elif 'qwen' in model.lower() or model_type=='vllm':
         
         # Simulate orchestrator responses that trigger tool calls
